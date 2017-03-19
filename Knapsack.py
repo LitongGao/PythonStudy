@@ -83,7 +83,20 @@ def testMaxValue(foods, maxUnits):
     val , taken = maxValue(foods, maxUnits)
     for item in taken:
         print(' ', item)
-    
+ 
+import random
+
+def buildLargeMenu(numItems, maxVal, maxCost):
+    items = []
+    for i in range(numItems):
+        items.append(Food(str(i),
+                          random.randint(1, maxVal),
+                          random.randint(1, maxCost)))
+    return items
+for numItems in (5, 10, 15, 20, 25, 30, 35, 40, 45):
+    print('Try a menu with', numItems, 'items')
+    items = buildLargeMenu(numItems, 90, 250)
+    testMaxValue(items, 750)
 names = ['wine', 'beer', 'pizza', 'burger', 'fries', 'coke', 'apple', 'donut']
 values = [89,90,95,100,90,79,50,10]
 calories = [123,154,258,354,365,150,95,195]
