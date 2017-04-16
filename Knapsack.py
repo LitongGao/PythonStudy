@@ -93,7 +93,7 @@ def buildLargeMenu(numItems, maxVal, maxCost):
                           random.randint(1, maxVal),
                           random.randint(1, maxCost)))
     return items
-for numItems in (5, 10, 15, 20, 25, 30, 35, 40, 45):
+for numItems in (5, 10):
     print('Try a menu with', numItems, 'items')
     items = buildLargeMenu(numItems, 90, 250)
     testMaxValue(items, 750)
